@@ -84,7 +84,11 @@
 //     rect(0, 0, 60, 60);
 //   }
 
+// https://2161086.github.io/task0415/
 // let easing = 0;
+
+let angle = 0.0;
+
   function setup() {
     createCanvas(500, 500);
     stroke(10);
@@ -92,10 +96,14 @@
   
   function draw() {
     background(255);
+    for(let i = 0; i < width ; i++) {
+        ellipse(i, i, width / 2);
+    }
     translate(mouseX, mouseY);
     let scalar = mouseX / 200.0;
     scale(scalar);
-    strokeWeight(1.0 / scalar);   
+    strokeWeight(1.0 / scalar); 
+    rotate(angle);
 
     for (let b1 = 20; b1 <= 500; b1 += 20) {
       for (let b2 = 20; b2 <= 500; b2 += 20) {
@@ -103,4 +111,6 @@
         fill(100, 10);
       }
     }
+    angle +=0.1;
+    
   }
